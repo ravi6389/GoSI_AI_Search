@@ -57,10 +57,9 @@ html, body, [class*="css"]  {
 # AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 # AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")
 
-TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
-FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY")
-# st.write(TAVILY_API_KEY)
-# st.write(FIRECRAWL_API_KEY)
+TAVILY_API_KEY = st.secrets["TAVILY_API_KEY"]
+FIRECRAWL_API_KEY = st.secrets["FIRECRAWL_API_KEY"]
+
 
 # -------------------------------------------------------
 # IMPORT TOOLS
@@ -73,10 +72,10 @@ embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 # -------------------------------------------------------
 
 llm = AzureChatOpenAI(
-                                api_key = os.getenv("AZURE_API_KEY"),
-                                azure_endpoint = os.getenv("AZURE_ENDPOINT"),
-                                model = os.getenv("LLM_MODEL"),
-                                api_version= os.getenv("AZURE_API_VERSION"),
+                                api_key = st.secrets["AZURE_API_KEY"],
+                                azure_endpoint =st.secrets["AZURE_ENDPOINT"],
+                                model = st.secrets"LLM_MODEL"],
+                                api_version= st.secrets"AZURE_API_VERSION"],
                                 temperature = 0.
                                 )
 
@@ -1843,5 +1842,6 @@ if run_btn and query.strip():
     with tab_debug:
         st.markdown("### 🐞 Full JSON Output")
         st.json(result)
+
 
 
