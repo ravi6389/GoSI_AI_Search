@@ -98,10 +98,7 @@ firecrawl = Firecrawl(api_key=FIRECRAWL_API_KEY)
 # =====================================================================
 # DISC BADGE RENDERER
 # =====================================================================
-import json
-import re
-import streamlit as st
-import plotly.graph_objects as go
+
 
 # =========================================================
 # DISC BADGE (Humantic Style)
@@ -1846,4 +1843,5 @@ if run_btn and query.strip():
     with tab_debug:
         st.markdown("### 🐞 Full JSON Output")
         st.json(result)
+
 
