@@ -1,0 +1,27 @@
+# Core
+python-dotenv
+numpy
+pandas
+
+# Streamlit
+streamlit
+
+# Web scraping
+trafilatura
+
+# Tokenization
+tiktoken
+
+# LangChain / LangGraph / LLMs
+langchain
+langchain-openai
+langgraph
+langchain-groq
+
+# Search & crawling
+tavily-python
+firecrawl-py
+
+# Embeddings
+sentence-transformers
+torch
