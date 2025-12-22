@@ -74,8 +74,8 @@ embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 llm = AzureChatOpenAI(
                                 api_key = st.secrets["AZURE_API_KEY"],
                                 azure_endpoint =st.secrets["AZURE_ENDPOINT"],
-                                model = st.secrets"LLM_MODEL"],
-                                api_version= st.secrets"AZURE_API_VERSION"],
+                                model = st.secrets["LLM_MODEL"],
+                                api_version= st.secrets["AZURE_API_VERSION"],
                                 temperature = 0.
                                 )
 
@@ -1842,6 +1842,7 @@ if run_btn and query.strip():
     with tab_debug:
         st.markdown("### 🐞 Full JSON Output")
         st.json(result)
+
 
 
 
