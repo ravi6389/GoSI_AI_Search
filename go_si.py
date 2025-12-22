@@ -20,6 +20,21 @@ from langchain_groq import ChatGroq
 import os
 from sentence_transformers import SentenceTransformer
 
+import json
+import re
+from collections import deque
+from typing import TypedDict
+
+import streamlit as st
+import pandas as pd
+# import plotly.express as px
+# import plotly.graph_objects as go
+
+from tavily import TavilyClient
+from firecrawl import Firecrawl
+from langgraph.graph import StateGraph
+from langchain_openai import ChatOpenAI
+
 
 MAX_SUBLINKS_PER_PAGE = 7
 
@@ -69,20 +84,7 @@ llm = AzureChatOpenAI(
 # CHUNK 1 — Imports, Keys, Helper Utilities, Search + Crawl
 # ============================================================
 
-import json
-import re
-from collections import deque
-from typing import TypedDict
 
-import streamlit as st
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-
-from tavily import TavilyClient
-from firecrawl import Firecrawl
-from langgraph.graph import StateGraph
-from langchain_openai import ChatOpenAI
 
 
 # ============================================================
@@ -1844,3 +1846,4 @@ if run_btn and query.strip():
     with tab_debug:
         st.markdown("### 🐞 Full JSON Output")
         st.json(result)
+
