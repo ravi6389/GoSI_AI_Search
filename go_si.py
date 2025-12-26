@@ -78,7 +78,7 @@ embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 #                                 api_version= st.secrets["AZURE_API_VERSION"],
 #                                 temperature = 0.
 #                                 )
-llm = ChatGroq(temperature=0.8, groq_api_key=GROQ_API_KEY,
+llm = ChatGroq(temperature=0.8, groq_api_key=st.secreats['GROQ_API_KEY'],
             #    model_name="llama-3.1-8b-instant", streaming=True)
             model_name="llama-3.3-70b-versatile", streaming=True)
 
@@ -1845,6 +1845,7 @@ if run_btn and query.strip():
     with tab_debug:
         st.markdown("### 🐞 Full JSON Output")
         st.json(result)
+
 
 
 
